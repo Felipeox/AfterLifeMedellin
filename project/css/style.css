@@ -1,0 +1,136 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background: #471377b4;
+    padding: 1em;
+}
+
+nav ul li a {
+    color: rgb(141, 27, 161);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.carrusel {
+    width: 200%;
+    overflow: hidden;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+}
+
+.imagenes {
+    display: flex;
+    width: 90%; 
+    animation: deslizar 20s linear infinite;
+}
+
+.imagenes img {
+    width: 100vw; /* Ajustar al ancho de la pantalla */
+    max-height: 600px;
+    object-fit: cover;
+}
+
+/* Animación para deslizar el carrusel */
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100vw); }
+    66% { transform: translateX(-200vw); }
+    100% { transform: translateX(0); }
+}
+
+
+
+
+@keyframes carrusel {
+    0%, 100% { transform: translateX(0%); }
+    33% { transform: translateX(-100vw); }
+    66% { transform: translateX(-200vw); }
+}
+
+#info, #contacto, .mapa {
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+}
+
+form input,
+ form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #8d1ba1;
+    box-shadow: 0 0 5px #8d1ba1;
+}
+
+button {
+    background: #8d1ba1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #a82bd5;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #8d1ba1;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagenes {
+        width: 300%;
+    }
+
+    @keyframes carrusel {
+        0%, 100% { transform: translateX(0); }
+        33% { transform: translateX(-100%); }
+        66% { transform: translateX(-200%); }
+    }
+}
+
+
+  
